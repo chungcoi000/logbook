@@ -68,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
         loadData(0);
         index = 0;
       } else {
-        loadData(++index);
         int currentPic = index + 1;
         tv.setText(currentPic + "/" + arrayImageURL.size());
+        loadData(++index);
       }
     });
 
@@ -130,7 +130,6 @@ public class MainActivity extends AppCompatActivity {
     String json = gson.toJson(arrayImageURL);
     editor.putString("image_url", json);
     editor.apply();
-    int numberIndex = arrayImageURL.size() - 1;
-    loadData(numberIndex);
+    loadData(arrayImageURL.size() - 1);
   }
 }
